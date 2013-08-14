@@ -16,6 +16,7 @@ function Session(settings) {
 
     this.fixVersion = settings.fixVersion;
     this.senderCompID = settings.senderCompID;
+    this.senderSubID = settings.senderSubID;
     this.targetCompID = settings.targetCompID;
     this.targetSubID = settings.targetSubID;
 
@@ -246,6 +247,7 @@ Session.prototype.prepareMessageForSend = function (message, time) {
     message.setHeaderValue("BeginString", this.fixVersion);
     message.setHeaderValue("MsgSeqNum", this.outgoingSeqNum);
     message.setHeaderValue("SenderCompID", this.senderCompID);
+    message.setHeaderValue("SenderSubID", this.senderSubID);
     message.setHeaderValue("TargetCompID", this.targetCompID);
     message.setHeaderValue("TargetSubID", this.targetSubID);
     message.setTimeStamp(time);

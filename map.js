@@ -1060,7 +1060,8 @@ var fields = exports.fields = {
     "9093": "FXCMCondDistEntryLimit",
     "9094": "FXCMMaxQuantity",
     "9095": "FXCMMinQuantity",
-    "9096": "FXCMTradingStatus"
+    "9096": "FXCMTradingStatus",
+    "5101": "RequestCurrencyPair"
 };
 
 exports.keys = {
@@ -2019,7 +2020,8 @@ exports.keys = {
     "Nested3PartySubID": "953",
     "Nested3PartySubIDType": "954",
     "LegContractSettlMonth": "955",
-    "LegInterestAccrualDate": "956"
+    "LegInterestAccrualDate": "956",
+    "RequestCurrencyPair": "5101"
 };
 
 

@@ -4,7 +4,7 @@ var utility = require("./utility");
 
 var SOH = String.fromCharCode(1);
 var preHeaderFields = ["BeginString", "BodyLength"];
-var headerFields = ["MsgType", "MsgSeqNum", "SenderCompID", "SendingTime", "TargetCompID", "TargetSubID"];
+var headerFields = ["MsgType", "MsgSeqNum", "SenderCompID", "SenderSubID", "SendingTime", "TargetCompID", "TargetSubID"];
 
 function OutgoingMessage(type, data) {
     this.preHeader = [];

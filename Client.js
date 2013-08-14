@@ -65,12 +65,11 @@ Client.prototype.logon = function (username, password) {
         ["HeartBtInt", "30"],
         ["ResetSeqNumFlag", "Y"]
     ]);
-    this.send("UserRequest", [
-        ["Username", username],
-        ["Password", password],
-        ["UserRequestID", "1"],
-        ["UserRequestType", "1"]
-    ]);
+    //this.send("UserRequest", [
+    //    ["Username", username],
+    //    ["UserRequestID", "1"],
+    //    ["UserRequestType", "1"]
+    //]);
 };
 
 /**

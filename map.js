@@ -1071,6 +1071,7 @@ var fields = exports.fields = {
     "5008": "TelegramDate",
     "5009": "TelegramTime",
     "5010": "TelegramType",
+    "5011": "Unknown",
     "5101": "RequestCurrencyPair"
 };
 
@@ -2041,8 +2042,8 @@ exports.keys = {
     "TelegramDate": "5008",
     "TelegramTime": "5009",
     "TelegramType": "5010",
-    "RequestCurrencyPair":"5101",
-    "RequestCurrencyPair": "5101"
+    "Unknown": "5011",
+    "RequestCurrencyPair":"5101"
 };
 
 

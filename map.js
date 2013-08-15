@@ -1061,6 +1061,16 @@ var fields = exports.fields = {
     "9094": "FXCMMaxQuantity",
     "9095": "FXCMMinQuantity",
     "9096": "FXCMTradingStatus",
+    "5001": "TelegramID",
+    "5002": "CurrencyPairs",
+    "5003": "Bid",
+    "5004": "Offer",
+    "5005": "Open",
+    "5006": "High",
+    "5007": "Low",
+    "5008": "TelegramDate",
+    "5009": "TelegramTime",
+    "5010": "TelegramType",
     "5101": "RequestCurrencyPair"
 };
 
@@ -2021,6 +2031,17 @@ exports.keys = {
     "Nested3PartySubIDType": "954",
     "LegContractSettlMonth": "955",
     "LegInterestAccrualDate": "956",
+    "TelegramID": "5001",
+    "CurrencyPairs": "5002",
+    "Bid": "5003",
+    "Offer": "5004",
+    "Open": "5005",
+    "High": "5006",
+    "Low": "5007",
+    "TelegramDate": "5008",
+    "TelegramTime": "5009",
+    "TelegramType": "5010",
+    "RequestCurrencyPair":"5101",
     "RequestCurrencyPair": "5101"
 };
 

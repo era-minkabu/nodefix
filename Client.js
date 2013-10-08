@@ -37,16 +37,14 @@ Client.prototype = new events.EventEmitter();
  * @public
  */
 Client.prototype.connect = function () {
-    this.stream = new net.Socket();
-    var that = this;
-    this.stream.connect(this.settings.port, this.settings.host,function(){
-      that.stream.on("connect", that._onConnected.bind(that));
-      that.stream.on("data", that._onIncomingData.bind(that));
-      that.stream.on("end", that._onDisconnected.bind(that));
-      that.stream.on("error", that._onStreamError.bind(that));
-    });
+    this.stream = net.createConnection(this.settings.port, this.settings.host);
     this.buffer = new Buffer();
     this.session = new Session(this.settings);
+
+    this.stream.on("connect", this._onConnected.bind(this));
+    this.stream.on("data", this._onIncomingData.bind(this));
+    this.stream.on("end", this._onDisconnected.bind(this));
+    this.stream.on("error", this._onStreamError.bind(this));
 
     this.buffer.on("message", this._onIncomingMessage.bind(this));
     this.buffer.on("fatal", this._onFatal.bind(this));

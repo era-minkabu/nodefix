@@ -1073,6 +1073,14 @@ var fields = exports.fields = {
     "5010": "TelegramType",
     "5011": "Unknown",
     "5101": "RequestCurrencyPair"
+    "5205": "RecoveryPairs",
+    "5206": "RecoveryBid",
+    "5207": "RecoveryOffer",
+    "5208": "RecoveryOpen",
+    "5209": "RecoveryHigh",
+    "5210": "RecoveryLow",
+    "5211": "RecoverytelegramDate",
+    "5212": "RecoverytelegramTime"
 };
 
 exports.keys = {
@@ -2043,7 +2051,15 @@ exports.keys = {
     "TelegramTime": "5009",
     "TelegramType": "5010",
     "Unknown": "5011",
-    "RequestCurrencyPair":"5101"
+    "RequestCurrencyPair":"5101",
+    "RecoveryPairs": "5205",
+    "RecoveryBid": "5206",
+    "RecoveryOffer": "5207",
+    "RecoveryOpen": "5208",
+    "RecoveryHigh": "5209",
+    "RecoveryLow": "5210",
+    "RecoverytelegramDate": "5211",
+    "RecoverytelegramTime": "5212"
 };
 
 

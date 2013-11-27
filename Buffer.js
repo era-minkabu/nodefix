@@ -51,7 +51,7 @@ Buffer.prototype.incoming = function (raw) {
         var bodyLength = parseInt(_bodyLengthStr, 10);
         if (isNaN(bodyLength)) {
             console.log("[ERROR] Unable to parse bodyLength field. Message probably malformed: bodyLength =", bodyLength, ", msg =", this.buffer.toString());
-            this.emit("fatal");
+            //this.emit("fatal");
             return;
         }
 

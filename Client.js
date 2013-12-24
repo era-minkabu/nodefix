@@ -26,9 +26,7 @@ var Session = require("./Session");
  * @fires end
  */
 
-function Client(settings) {
-    this.settings = settings;
-    this.connect();
+function Client() {
 }
 
 Client.prototype = new events.EventEmitter();
@@ -36,10 +34,15 @@ Client.prototype = new events.EventEmitter();
 /**
  * @public
  */
-Client.prototype.connect = function () {
-    this.stream = net.createConnection(this.settings.port, this.settings.host);
+Client.prototype.connect = function (settings) {
+    if(this.stream){
+      this.stream.removeAllListeners();
+      this.buffer.removeAllListeners();
+      this.session.removeAllListeners();
+    }
+    this.stream = net.createConnection(settings.port, settings.host);
     this.buffer = new Buffer();
-    this.session = new Session(this.settings);
+    this.session = new Session(settings);
 
     this.stream.on("connect", this._onConnected.bind(this));
     this.stream.on("data", this._onIncomingData.bind(this));

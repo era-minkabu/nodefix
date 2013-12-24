@@ -58,9 +58,6 @@ Client.prototype.destroy = function(){
     this.buffer.removeAllListeners();
     this.session.removeAllListeners();
   }
-  this.stream = null
-  this.buffer = null
-  this.session = null
 }
 
 /**

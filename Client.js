@@ -35,11 +35,6 @@ Client.prototype = new events.EventEmitter();
  * @public
  */
 Client.prototype.connect = function (settings) {
-    if(this.stream){
-      this.stream.removeAllListeners();
-      this.buffer.removeAllListeners();
-      this.session.removeAllListeners();
-    }
     this.stream = net.createConnection(settings.port, settings.host);
     this.buffer = new Buffer();
     this.session = new Session(settings);
@@ -56,6 +51,18 @@ Client.prototype.connect = function (settings) {
     this.session.on("logon", this._onLogon.bind(this));
     this.session.on("fatal", this._onFatal.bind(this));
 };
+
+Client.prototype.destroy = function(){
+  this.logoff();
+  if(this.stream){
+    this.stream.removeAllListeners();
+    this.buffer.removeAllListeners();
+    this.session.removeAllListeners();
+  }
+  this.stream = null
+  this.buffer = null
+  this.session = null
+}
 
 /**
  * @public

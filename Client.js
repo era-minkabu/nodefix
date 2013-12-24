@@ -53,7 +53,6 @@ Client.prototype.connect = function (settings) {
 };
 
 Client.prototype.destroy = function(){
-  this.logoff();
   if(this.stream){
     this.stream.removeAllListeners();
     this.buffer.removeAllListeners();

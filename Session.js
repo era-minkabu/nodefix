@@ -61,7 +61,7 @@ Session.prototype.incoming = function (message) {
         }
     }
 
-    this.logMessage(now, message);
+    this.logMessage(now, message, 'incoming');
 
     // Process seq-reset (no gap-fill)
     if (messageType === "Sequence Reset" && typeof message.get("GapFillFlag") === "undefined" || message.get("GapFillFlag") === "N") {
@@ -239,7 +239,7 @@ Session.prototype.sendMessage = function (message) {
     this.prepareMessageForSend(message, now);
     this.outgoingSeqNum++;
     this.lastOutgoingMessage = message;
-    this.logMessage(now, message);
+    this.logMessage(now, message, "send");
     this.emit("send", message);
 };
 
@@ -254,7 +254,8 @@ Session.prototype.prepareMessageForSend = function (message, time) {
     message.finalise();
 };
 
-Session.prototype.logMessage = function (time, message) {
+Session.prototype.logMessage = function (time, message, type) {
+    type = type ? type : 'Unknown';
     if (!this.file) {
         var filename = "./traffic/" + this.senderCompID + "->" + this.targetCompID + ".log";
         this.file = fs.createWriteStream(filename, {
@@ -264,7 +265,7 @@ Session.prototype.logMessage = function (time, message) {
             console.log(error);
         });
     }
-    this.file.write(time.toString() + " " + message.getFIX() + "\n\n");
+    this.file.write(time.toString() + " " + type + " " + message.getFIX() + "\n\n");
 };
 
 module.exports = Session;
